@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="5"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tvNguyenLieu"
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="White Wine Vinegar"
+            android:textColor="#1A1A1A"
+            android:textSize="15sp"/>
+
+
+        <TextView
+            android:id="@+id/tvUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="15sp"
+            android:text="3 tbsp" />
+    </LinearLayout>
+</LinearLayout>

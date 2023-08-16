@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "411703070214",
+    "firebase_url": "https://mocktest-2598f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mocktest-2598f",
+    "storage_bucket": "mocktest-2598f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411703070214:android:4de31ea4c2ec98fce77d87",
+        "android_client_info": {
+          "package_name": "com.example.mocktest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411703070214-2556923ohk6t0v3hg5hrtbn62qkemcd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe94OwKGYFGiBwkLdhqD7oGG2-YdIte9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411703070214-2556923ohk6t0v3hg5hrtbn62qkemcd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

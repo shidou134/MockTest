@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MockTest</string>
+    <string name="action_home">Home</string>
+    <string name="action_saved">Saved</string>
+    <string name="action_profile">Profile</string>
+    <string name="daily_recip">Daily Recipe For You</string>
+    <string name="home_made_p">Home Made Pizza</string>
+    <string name="recent_meals">Recent Meals</string>
+    <string name="monday_july_31_2023">Monday - July 31,2023</string>
+    <string name="todo">String</string>
+    <string name="background">Background</string>
+    <string name="clock">clock</string>
+    <string name="_25m">25m</string>
+    <string name="eggs_benedict">Eggs Benedict</string>
+    <string name="make_it_now">MAKE IT NOW!</string>
+    <string name="food">food</string>
+    <string name="star">star</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- strings.xml -->
+    <string name="by_gordon_r">
+By Gordon Ramsay
+</string>
+    <string name="list_meals">
+List Meals
+</string>
+</resources>

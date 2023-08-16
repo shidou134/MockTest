@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_menu">
+
+    <fragment
+        android:id="@+id/fragment_menu"
+        android:name="com.example.mocktest.ui.FragmentMenu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_search"
+            app:destination="@id/fragment_search" />
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_saved"
+            app:destination="@id/fragment_saved" />
+        <action
+            android:id="@+id/action_fragment_menu_to_fragment_list_meals"
+            app:destination="@id/fragment_list_meals" />
+        <action
+            android:id="@+id/action_fragment_menu_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_detail"
+        android:name="com.example.mocktest.ui.FragmentDetail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="saved"
+            app:argType="com.example.mocktest.model.Saved" />
+        <action
+            android:id="@+id/action_fragment_detail_to_fragment_menu"
+            app:destination="@id/fragment_menu" />
+        <action
+            android:id="@+id/action_fragment_detail_to_fragment_search"
+            app:destination="@id/fragment_search" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_list_meals"
+        android:name="com.example.mocktest.ui.FragmentListMeal"
+        android:label="fragment_list_meals"
+        tools:layout="@layout/fragment_list_meals" >
+        <action
+            android:id="@+id/action_fragment_list_meals_to_fragment_search"
+            app:destination="@id/fragment_search" />
+        <action
+            android:id="@+id/action_fragment_list_meals_to_fragment_saved"
+            app:destination="@id/fragment_saved" />
+        <action
+            android:id="@+id/action_fragment_list_meals_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+        <action
+            android:id="@+id/action_fragment_list_meals_to_fragment_search2"
+            app:destination="@id/fragment_search" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_saved"
+        android:name="com.example.mocktest.ui.FragmentSaved"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_fragment_saved_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+        <action
+            android:id="@+id/action_fragment_saved_to_fragment_search"
+            app:destination="@id/fragment_search" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_search"
+        android:name="com.example.mocktest.ui.FragmentSearch"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_fragment_search_to_fragment_menu"
+            app:destination="@id/fragment_menu" />
+        <action
+            android:id="@+id/action_fragment_search_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+        <action
+            android:id="@+id/action_fragment_search_to_fragment_detail2"
+            app:destination="@id/fragment_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.mocktest.ui.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

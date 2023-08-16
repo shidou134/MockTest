@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FragmentMenu">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/background"
+                android:src="@drawable/background_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/menu_icon"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#FFD226"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/group"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/daily_recip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="top"
+                android:lineSpacingExtra="-5sp"
+                android:text="@string/daily_recip"
+                android:textAppearance="@style/daily_recip"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menu" />
+
+            <ImageView
+                android:id="@+id/imgStar"
+                android:layout_width="23dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/star"
+                android:src="@drawable/star"
+                app:layout_constraintEnd_toStartOf="@+id/daily_recip"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menu" />
+
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/monday_july_31_2023"
+                android:textColor="#33691E"
+                app:layout_constraintLeft_toLeftOf="@+id/daily_recip"
+                app:layout_constraintRight_toRightOf="@+id/daily_recip"
+                app:layout_constraintTop_toBottomOf="@+id/daily_recip" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgFood"
+                android:layout_width="366dp"
+                android:layout_height="182dp"
+                android:layout_marginTop="-180dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/food"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgBackground"
+                app:shapeAppearanceOverlay="@style/rounded_corner"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMakeIt"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-25dp"
+                android:background="@drawable/button_custom"
+                android:drawableStart="@drawable/chef_icon"
+                android:text="@string/make_it_now"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgFood"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvTenMonAn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="128dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/eggs_benedict"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/imgClock"
+                app:layout_constraintTop_toTopOf="@+id/imgFood" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="128dp"
+                android:text="@string/_25m"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.837"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgFood" />
+
+            <ImageView
+                android:id="@+id/imgClock"
+                android:layout_width="17dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="128dp"
+                android:layout_marginRight="5dp"
+                android:contentDescription="@string/clock"
+                android:src="@drawable/clock_icon"
+                app:layout_constraintHorizontal_bias="0.798"
+                app:layout_constraintRight_toLeftOf="@+id/tvTime"
+                app:layout_constraintTop_toTopOf="@+id/imgFood"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/history_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMakeIt"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/tvRecentMeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/recent_meals"
+                android:textColor="#757575"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.006"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/btnMakeIt" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentMeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRecentMeals"
+                app:layout_constraintVertical_bias="0.0"
+                tools:itemCount="10"
+                tools:listitem="@layout/list_items" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSeeAll"
+                android:layout_width="138dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_see_all"
+                android:text="See all"
+                android:textColor="#9E9E9E"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvRecentMeals" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
