@@ -1,7 +1,7 @@
-package com.example.mocktest.data
+package com.example.mocktest.data.mealrepository
 
 import com.example.mocktest.data.entity.MealFirebase
-import com.example.mocktest.data.entity.Meals
+
 
 interface MealRepository {
     fun getListMeal(callback: (List<MealFirebase>) -> Unit)

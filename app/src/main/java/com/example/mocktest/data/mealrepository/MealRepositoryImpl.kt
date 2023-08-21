@@ -1,5 +1,6 @@
-package com.example.mocktest.data
+package com.example.mocktest.data.mealrepository
 
+import com.example.mocktest.data.RetrofitBuider
 import com.example.mocktest.data.entity.MealFirebase
 import com.example.mocktest.data.entity.Meals
 import com.example.mocktest.map.Mapper.toMealFirebase

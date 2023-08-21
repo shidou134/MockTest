@@ -5,16 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mocktest.data.MealRepository
-import com.example.mocktest.data.MealRepositoryImpl
-import com.example.mocktest.map.Mapper.toMealFirebase
-import com.example.mocktest.data.entity.Meals
+import com.example.mocktest.data.mealrepository.MealRepository
+import com.example.mocktest.data.mealrepository.MealRepositoryImpl
 import com.example.mocktest.data.entity.MealFirebase
-import com.example.mocktest.data.RetrofitBuider
 import com.google.firebase.database.*
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Response
 
 class MealViewModel(
     private val repository: MealRepository = MealRepositoryImpl()
