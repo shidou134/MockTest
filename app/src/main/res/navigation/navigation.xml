@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_menu"
-        android:name="com.example.mocktest.ui.FragmentMenu"
+        android:name="com.example.mocktest.ui.menu.FragmentMenu"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_detail"
-        android:name="com.example.mocktest.ui.FragmentDetail"
+        android:name="com.example.mocktest.ui.detail.FragmentDetail"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument
-            android:name="saved"
-            app:argType="com.example.mocktest.model.Saved" />
+            android:name="MealFirebase"
+            app:argType="com.example.mocktest.data.entity.MealFirebase" />
         <action
             android:id="@+id/action_fragment_detail_to_fragment_menu"
             app:destination="@id/fragment_menu" />
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_list_meals"
-        android:name="com.example.mocktest.ui.FragmentListMeal"
+        android:name="com.example.mocktest.ui.listmeal.FragmentListMeal"
         android:label="fragment_list_meals"
         tools:layout="@layout/fragment_list_meals" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_saved"
-        android:name="com.example.mocktest.ui.FragmentSaved"
+        android:name="com.example.mocktest.ui.saved.FragmentSaved"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.example.mocktest.ui.FragmentSearch"
+        android:name="com.example.mocktest.ui.search.FragmentSearch"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentProfile"
-        android:name="com.example.mocktest.ui.FragmentProfile"
+        android:name="com.example.mocktest.ui.profile.FragmentProfile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

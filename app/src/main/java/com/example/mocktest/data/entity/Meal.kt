@@ -1,4 +1,4 @@
-package com.example.mocktest.model
+package com.example.mocktest.data.entity
 
 
 import android.os.Parcelable

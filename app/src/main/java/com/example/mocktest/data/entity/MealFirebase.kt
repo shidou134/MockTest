@@ -1,4 +1,4 @@
-package com.example.mocktest.model
+package com.example.mocktest.data.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class Saved(
+data class MealFirebase(
     @SerialName("idMeal")
     val idMeal: String? = "",
     @SerialName("strArea")

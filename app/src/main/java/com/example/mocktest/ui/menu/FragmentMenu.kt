@@ -1,4 +1,4 @@
-package com.example.mocktest.ui
+package com.example.mocktest.ui.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mocktest.R
-import com.example.mocktest.adapter.MenuAdapter
+import com.example.mocktest.ui.adapter.MenuAdapter
 import com.example.mocktest.databinding.FragmentMenuBinding
-import com.example.mocktest.model.Saved
-import com.example.mocktest.viewmodel.MealViewModel
+import com.example.mocktest.data.entity.MealFirebase
+import com.example.mocktest.ui.MealViewModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
@@ -80,9 +80,9 @@ class FragmentMenu : Fragment() {
         }
     }
 
-    private fun navToDetail(saved: Saved) {
+    private fun navToDetail(mealFirebase: MealFirebase) {
         binding.btnMakeIt.setOnClickListener {
-            val action = FragmentMenuDirections.actionFragmentMenuToFragmentDetail(saved)
+            val action = FragmentMenuDirections.actionFragmentMenuToFragmentDetail(mealFirebase)
             findNavController().navigate(action)
         }
     }

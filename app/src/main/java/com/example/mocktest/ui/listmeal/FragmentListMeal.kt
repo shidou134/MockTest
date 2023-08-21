@@ -1,4 +1,4 @@
-package com.example.mocktest.ui
+package com.example.mocktest.ui.listmeal
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mocktest.R
-import com.example.mocktest.adapter.MenuAdapter
+import com.example.mocktest.ui.adapter.MenuAdapter
 import com.example.mocktest.databinding.FragmentListMealsBinding
-import com.example.mocktest.viewmodel.MealViewModel
+import com.example.mocktest.ui.MealViewModel
 
 class FragmentListMeal : Fragment() {
 
@@ -42,7 +42,8 @@ class FragmentListMeal : Fragment() {
         adapter.onItemClick = { num, saved ->
             when(num){
                 0 -> {
-                    val action = FragmentListMealDirections.actionFragmentListMealsToFragmentDetail(saved)
+                    val action =
+                        FragmentListMealDirections.actionFragmentListMealsToFragmentDetail(saved)
                     findNavController().navigate(action)
                 }
                 1 -> {

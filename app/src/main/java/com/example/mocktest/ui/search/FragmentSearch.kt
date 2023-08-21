@@ -1,25 +1,20 @@
-package com.example.mocktest.ui
+package com.example.mocktest.ui.search
 
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.example.mocktest.R
-import com.example.mocktest.adapter.MenuAdapter
+import com.example.mocktest.ui.adapter.MenuAdapter
 import com.example.mocktest.databinding.FragmentSearchBinding
-import com.example.mocktest.model.Saved
-import com.example.mocktest.viewmodel.MealViewModel
-import com.google.android.material.search.SearchView
-import java.util.*
-import kotlin.collections.ArrayList
+import com.example.mocktest.ui.MealViewModel
 
 class FragmentSearch : Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
-    private var list = ArrayList<Saved>()
     private val viewModel: MealViewModel by viewModels()
 
     override fun onCreateView(
@@ -37,7 +32,7 @@ class FragmentSearch : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentSearchBinding.bind(view)
-        var adapter = MenuAdapter(emptyList())
+        val adapter = MenuAdapter(emptyList())
         binding.rvSearch.adapter = adapter
 
 
@@ -52,7 +47,8 @@ class FragmentSearch : Fragment() {
         adapter.onItemClick = { num, saved ->
             when (num) {
                 0 -> {
-                    val action = FragmentSearchDirections.actionFragmentSearchToFragmentDetail(saved)
+                    val action =
+                        FragmentSearchDirections.actionFragmentSearchToFragmentDetail(saved)
                     findNavController().navigate(action)
                 }
                 1 -> {
@@ -68,7 +64,7 @@ class FragmentSearch : Fragment() {
         binding.svSearch.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -77,7 +73,7 @@ class FragmentSearch : Fragment() {
                 } else {
                     adapter.updateData(emptyList())
                 }
-                return true
+                return false
             }
 
         })

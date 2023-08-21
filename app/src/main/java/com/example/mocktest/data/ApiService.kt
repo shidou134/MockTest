@@ -1,6 +1,6 @@
 package com.example.mocktest.data
 
-import com.example.mocktest.model.Meals
+import com.example.mocktest.data.entity.Meals
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

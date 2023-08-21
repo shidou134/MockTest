@@ -1,10 +1,11 @@
-package com.example.mocktest
+package com.example.mocktest.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.mocktest.R
 import com.example.mocktest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

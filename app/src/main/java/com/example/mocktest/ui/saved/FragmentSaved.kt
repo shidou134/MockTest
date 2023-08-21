@@ -1,4 +1,4 @@
-package com.example.mocktest.ui
+package com.example.mocktest.ui.saved
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mocktest.R
-import com.example.mocktest.adapter.MenuAdapter
+import com.example.mocktest.ui.adapter.MenuAdapter
 import com.example.mocktest.databinding.FragmentSavedBinding
-import com.example.mocktest.model.Saved
-import com.example.mocktest.viewmodel.MealViewModel
+import com.example.mocktest.ui.MealViewModel
 
 class FragmentSaved : Fragment() {
 
@@ -39,7 +38,7 @@ class FragmentSaved : Fragment() {
         val adapter = MenuAdapter(emptyList())
         binding.rvSaved.adapter = adapter
 
-        viewModel.savedLiveData.observe(this) {
+        viewModel.mealFirebaseLiveData.observe(this) {
             if (it == null) {
                 adapter.updateData(emptyList())
             } else {

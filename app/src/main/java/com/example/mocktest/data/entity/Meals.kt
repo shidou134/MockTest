@@ -1,6 +1,7 @@
-package com.example.mocktest.model
+package com.example.mocktest.data.entity
 
 
+import com.example.mocktest.data.entity.Meal
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

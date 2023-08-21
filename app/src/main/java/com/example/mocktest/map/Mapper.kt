@@ -1,11 +1,11 @@
 package com.example.mocktest.map
 
-import com.example.mocktest.model.Meal
-import com.example.mocktest.model.Saved
+import com.example.mocktest.data.entity.Meal
+import com.example.mocktest.data.entity.MealFirebase
 
 object Mapper {
-    fun Meal.mapToSaved(): Saved {
-        return Saved(
+    fun Meal.toMealFirebase(): MealFirebase {
+        return MealFirebase(
             idMeal = this.idMeal,
             strArea = this.strArea,
             strCategory = this.strCategory,

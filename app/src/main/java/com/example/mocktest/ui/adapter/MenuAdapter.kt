@@ -1,4 +1,4 @@
-package com.example.mocktest.adapter
+package com.example.mocktest.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mocktest.databinding.ListItemsBinding
-import com.example.mocktest.model.Saved
+import com.example.mocktest.data.entity.MealFirebase
 import com.squareup.picasso.Picasso
 
-class MenuAdapter(private var list: List<Saved>) :
+class MenuAdapter(private var list: List<MealFirebase>) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
-    var onItemClick: ((Int, Saved) -> Unit) = { _, _ ->
+    var onItemClick: ((Int, MealFirebase) -> Unit) = { _, _ ->
 
     }
 
     class MenuViewHolder(private val binding: ListItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Saved, itemClick: ((Int, Saved) -> Unit)) {
+        fun bind(item: MealFirebase, itemClick: ((Int, MealFirebase) -> Unit)) {
             if (item.Like){
                 binding.imgLike.visibility = View.GONE
                 binding.imgLikeRed.visibility = View.VISIBLE
@@ -59,7 +59,7 @@ class MenuAdapter(private var list: List<Saved>) :
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateData(newData: List<Saved>) {
+    fun updateData(newData: List<MealFirebase>) {
         list = newData
         notifyDataSetChanged()
     }

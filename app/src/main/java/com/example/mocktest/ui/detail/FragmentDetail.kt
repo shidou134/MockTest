@@ -1,4 +1,4 @@
-package com.example.mocktest.ui
+package com.example.mocktest.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mocktest.R
-import com.example.mocktest.adapter.DetailAdapter
 import com.example.mocktest.databinding.FragmentDetailBinding
-import com.example.mocktest.model.Saved
-import com.example.mocktest.viewmodel.MealViewModel
+import com.example.mocktest.data.entity.MealFirebase
+import com.example.mocktest.ui.MealViewModel
 import com.squareup.picasso.Picasso
 
 
@@ -21,7 +20,7 @@ class FragmentDetail : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
     private val args: FragmentDetailArgs by navArgs()
-    private val viewModel:MealViewModel by viewModels()
+    private val viewModel: MealViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +38,7 @@ class FragmentDetail : Fragment() {
         changToSearch()
 
         binding = FragmentDetailBinding.bind(view)
-        val meal = args.saved
+        val meal = args.MealFirebase
 
         val adapter = DetailAdapter(meal)
         adapter.setDetail()
@@ -52,8 +51,8 @@ class FragmentDetail : Fragment() {
        saveDetail(meal)
     }
 
-    private fun setLikeDetail(saved: Saved){
-        if (saved.Like){
+    private fun setLikeDetail(mealFirebase: MealFirebase){
+        if (mealFirebase.Like){
             binding.imgLikeDetail.visibility = View.GONE
             binding.imgLikeRedDetail.visibility = View.VISIBLE
         } else{
@@ -62,19 +61,19 @@ class FragmentDetail : Fragment() {
         }
     }
 
-    private fun saveDetail(saved: Saved) {
+    private fun saveDetail(mealFirebase: MealFirebase) {
         binding.imgLikeDetail.setOnClickListener {
             binding.imgLikeDetail.visibility = View.GONE
             binding.imgLikeRedDetail.visibility = View.VISIBLE
-            viewModel.saveMeal(saved)
+            viewModel.saveMeal(mealFirebase)
         }
         binding.imgLikeRedDetail.setOnClickListener {
             binding.imgLikeDetail.visibility = View.VISIBLE
             binding.imgLikeRedDetail.visibility = View.GONE
-            viewModel.deleteDataSave(saved)
+            viewModel.deleteDataSave(mealFirebase)
         }
 
-        setLikeDetail(saved)
+        setLikeDetail(mealFirebase)
     }
 
     private fun changToSearch() {

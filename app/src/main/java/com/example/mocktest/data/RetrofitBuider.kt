@@ -1,6 +1,5 @@
-package com.example.mocktest.repositories
+package com.example.mocktest.data
 
-import com.example.mocktest.data.ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
