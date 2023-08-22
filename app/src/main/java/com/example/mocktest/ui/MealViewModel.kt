@@ -8,8 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.mocktest.data.mealrepository.MealRepository
 import com.example.mocktest.data.mealrepository.MealRepositoryImpl
 import com.example.mocktest.data.entity.MealFirebase
-import com.example.mocktest.data.favoriterepo.FavoriteRepository
-import com.example.mocktest.data.favoriterepo.FavoriteRepositoryImpl
+import com.example.mocktest.data.favoriterepository.FavoriteRepository
+import com.example.mocktest.data.favoriterepository.FavoriteRepositoryImpl
 import com.google.firebase.database.*
 import kotlinx.coroutines.launch
 
@@ -70,7 +70,6 @@ class MealViewModel(
     }
 
     fun saveMeal(mealFirebase: MealFirebase) {
-        dbref = FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
         viewModelScope.launch {
             repositoryFavorite.saveMeal(mealFirebase = mealFirebase)
         }
@@ -106,16 +105,7 @@ class MealViewModel(
     }
 
     fun deleteDataSave(mealFirebase: MealFirebase) {
-        ds = mutableListOf<MealFirebase>() as ArrayList<MealFirebase>
-        dbref =
-            FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
-                .child(mealFirebase.idMeal!!)
-        mealFirebase.Like = false
-        dbref.removeValue().addOnSuccessListener {
-            Log.d("remove", dbref.removeValue().toString())
-        }.addOnFailureListener {
-
-        }
+        repositoryFavorite.deleteDataFavorite(mealFirebase = mealFirebase)
     }
 }
 
