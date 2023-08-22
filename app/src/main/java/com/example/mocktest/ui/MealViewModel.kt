@@ -22,7 +22,6 @@ class MealViewModel(
         get() = _mealFirebaseLiveData
 
     private val _mealsLiveData: MutableLiveData<List<MealFirebase?>> = MutableLiveData()
-
     val mealsLiveData: LiveData<List<MealFirebase?>>
         get() = _mealsLiveData
 
