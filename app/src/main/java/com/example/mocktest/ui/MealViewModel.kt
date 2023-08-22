@@ -72,32 +72,6 @@ class MealViewModel(
     }
 
     fun getDataSave() {
-//        ds = mutableListOf<MealFirebase>() as ArrayList<MealFirebase>
-//        dbref = FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
-//        dbref.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                ds.clear()
-//                if (snapshot.exists()) {
-//                    for (snap in snapshot.children) {
-//                        Log.i("123312", snapshot.children.toString())
-//                        val data = snap.child("Meal").getValue(MealFirebase::class.java)
-//                        Log.d(
-//                            "43523",
-//                            snap.child("Meal").getValue(MealFirebase::class.java).toString()
-//                        )
-//                        ds.add(data!!)
-//                    }
-//                    _mealFirebaseLiveData.postValue(ds.toList())
-//                } else {
-//                    _mealFirebaseLiveData.postValue(emptyList())
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//
-//            }
-//
-//        })
         repositoryFavorite.getDataFavorite {
             _mealFirebaseLiveData.postValue(it)
         }
