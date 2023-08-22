@@ -8,17 +8,20 @@ import androidx.lifecycle.viewModelScope
 import com.example.mocktest.data.mealrepository.MealRepository
 import com.example.mocktest.data.mealrepository.MealRepositoryImpl
 import com.example.mocktest.data.entity.MealFirebase
+import com.example.mocktest.data.favoriterepo.FavoriteRepository
+import com.example.mocktest.data.favoriterepo.FavoriteRepositoryImpl
 import com.google.firebase.database.*
 import kotlinx.coroutines.launch
 
 class MealViewModel(
-    private val repository: MealRepository = MealRepositoryImpl()
+    private val repository: MealRepository = MealRepositoryImpl(),
+    private val repositoryFavorite: FavoriteRepository = FavoriteRepositoryImpl()
 ) : ViewModel() {
 
     private lateinit var dbref: DatabaseReference
     private lateinit var ds: ArrayList<MealFirebase>
-    private val _mealFirebaseLiveData: MutableLiveData<List<MealFirebase?>> = MutableLiveData()
 
+    private val _mealFirebaseLiveData: MutableLiveData<List<MealFirebase?>> = MutableLiveData()
     val mealFirebaseLiveData: LiveData<List<MealFirebase?>>
         get() = _mealFirebaseLiveData
 
@@ -55,7 +58,6 @@ class MealViewModel(
     }
 
     private val _mealsRandomLiveData: MutableLiveData<MealFirebase> = MutableLiveData()
-
     val mealRandomLiveData: LiveData<MealFirebase>
         get() = _mealsRandomLiveData
 
@@ -68,15 +70,9 @@ class MealViewModel(
     }
 
     fun saveMeal(mealFirebase: MealFirebase) {
-        val db = FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
+        dbref = FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
         viewModelScope.launch {
-            mealFirebase.Like = true
-            val value = HashMap<String, MealFirebase>()
-            value["Meal"] = mealFirebase
-            val idMeal = mealFirebase.idMeal
-            if (idMeal != null) {
-                db.child(idMeal).setValue(value)
-            }
+            repositoryFavorite.saveMeal(mealFirebase = mealFirebase)
         }
     }
 
