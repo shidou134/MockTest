@@ -2,8 +2,7 @@ package com.example.mocktest.data.favoriterepository
 
 import android.util.Log
 import com.example.mocktest.data.entity.MealFirebase
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class FavoriteRepositoryImpl : FavoriteRepository {
     private lateinit var dbref: DatabaseReference
@@ -20,7 +19,32 @@ class FavoriteRepositoryImpl : FavoriteRepository {
     }
 
     override fun getDataFavorite(callback: (List<MealFirebase>) -> Unit) {
+        ds = mutableListOf<MealFirebase>() as ArrayList<MealFirebase>
+        dbref = FirebaseDatabase.getInstance().getReference("listFavoriteMeals")
+        dbref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                ds.clear()
+                if (snapshot.exists()) {
+                    for (snap in snapshot.children) {
+                        Log.i("123312", snapshot.children.toString())
+                        val data = snap.child("Meal").getValue(MealFirebase::class.java)
+                        Log.d(
+                            "43523",
+                            snap.child("Meal").getValue(MealFirebase::class.java).toString()
+                        )
+                        ds.add(data!!)
+                    }
+                    callback.invoke(ds.toList())
+                } else {
+                    callback.invoke(emptyList())
+                }
+            }
 
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
     }
 
     override fun deleteDataFavorite(mealFirebase: MealFirebase) {
