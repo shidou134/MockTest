@@ -2,7 +2,6 @@ package com.example.mocktest.data.entity
 
 
 import android.os.Parcelable
-import com.google.gson.Gson
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -116,6 +115,4 @@ data class Meal(
     val strTags: String?,
     @SerialName("strYoutube")
     val strYoutube: String?
-):Parcelable{
-
-}
+):Parcelable
